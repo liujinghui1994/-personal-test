@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.umbrella.core.metadata_manage.dao.IMetadataManageDao" >
+    <resultMap id="MetadataVOMap" type="com.umbrella.core.metadata_manage.InstanceVO">
+        <result column="ID" property="ID" jdbcType="VARCHAR"/>
+        <result column="PAR_INST_ID" property="PAR_INST_ID" jdbcType="VARCHAR"/>
+        <result column="INST_NM" property="INST_NM" jdbcType="VARCHAR"/>
+        <result column="INST_CD" property="INST_CD" jdbcType="VARCHAR"/>
+        <result column="FK_CLASF_CD" property="FK_CLASF_CD" jdbcType="VARCHAR"/>
+        <result column="CRT_TM" property="CRT_TM" jdbcType="BIGINT"/>
+        <result column="LST_UPD_TM" property="LST_UPD_TM" jdbcType="BIGINT"/>
+        <result column="ATTR1" property="ATTR1" jdbcType="VARCHAR"/>
+        <result column="ATTR2" property="ATTR2" jdbcType="VARCHAR"/>
+        <result column="ATTR3" property="ATTR3" jdbcType="VARCHAR"/>
+        <result column="ATTR4" property="ATTR4" jdbcType="VARCHAR"/>
+        <result column="ATTR5" property="ATTR5" jdbcType="VARCHAR"/>
+        <result column="ATTR6" property="ATTR6" jdbcType="VARCHAR"/>
+        <result column="ATTR7" property="ATTR7" jdbcType="VARCHAR"/>
+        <result column="ATTR8" property="ATTR8" jdbcType="VARCHAR"/>
+        <result column="ATTR9" property="ATTR9" jdbcType="VARCHAR"/>
+        <result column="ATTR10" property="ATTR10" jdbcType="VARCHAR"/>
+        <result column="ATTR11" property="ATTR11" jdbcType="VARCHAR"/>
+        <result column="ATTR12" property="ATTR12" jdbcType="VARCHAR"/>
+        <result column="ATTR13" property="ATTR13" jdbcType="VARCHAR"/>
+        <result column="ATTR14" property="ATTR14" jdbcType="VARCHAR"/>
+        <result column="ATTR15" property="ATTR15" jdbcType="VARCHAR"/>
+        <result column="ATTR16" property="ATTR16" jdbcType="VARCHAR"/>
+        <result column="ATTR17" property="ATTR17" jdbcType="VARCHAR"/>
+        <result column="ATTR18" property="ATTR18" jdbcType="VARCHAR"/>
+        <result column="ATTR19" property="ATTR19" jdbcType="VARCHAR"/>
+        <result column="ATTR20" property="ATTR20" jdbcType="VARCHAR"/>
+        <result column="ATTR21" property="ATTR21" jdbcType="VARCHAR"/>
+        <result column="ATTR22" property="ATTR22" jdbcType="VARCHAR"/>
+        <result column="ATTR23" property="ATTR23" jdbcType="VARCHAR"/>
+        <result column="ATTR24" property="ATTR24" jdbcType="VARCHAR"/>
+        <result column="ATTR25" property="ATTR25" jdbcType="VARCHAR"/>
+        <result column="ATTR26" property="ATTR26" jdbcType="VARCHAR"/>
+        <result column="ATTR27" property="ATTR27" jdbcType="VARCHAR"/>
+        <result column="ATTR28" property="ATTR28" jdbcType="VARCHAR"/>
+        <result column="ATTR29" property="ATTR29" jdbcType="VARCHAR"/>
+        <result column="ATTR30" property="ATTR30" jdbcType="VARCHAR"/>
+        <result column="ATTR31" property="ATTR31" jdbcType="VARCHAR"/>
+        <result column="ATTR32" property="ATTR32" jdbcType="VARCHAR"/>
+        <result column="ATTR33" property="ATTR33" jdbcType="VARCHAR"/>
+        <result column="ATTR34" property="ATTR34" jdbcType="VARCHAR"/>
+        <result column="ATTR35" property="ATTR35" jdbcType="VARCHAR"/>
+        <result column="ATTR36" property="ATTR36" jdbcType="VARCHAR"/>
+        <result column="ATTR37" property="ATTR37" jdbcType="VARCHAR"/>
+        <result column="ATTR38" property="ATTR38" jdbcType="VARCHAR"/>
+        <result column="ATTR39" property="ATTR39" jdbcType="VARCHAR"/>
+        <result column="VERSION" property="VERSION" jdbcType="BIGINT"/>
+        <result column="CREATETIME" property="CREATETIME" jdbcType="BIGINT"/>
+        <result column="CREATEBY" property="CREATEBY" jdbcType="VARCHAR"/>
+        <result column="LASTMODIFYTIME" property="LASTMODIFYTIME" jdbcType="BIGINT"/>
+        <result column="LASTMODIFYBY" property="LASTMODIFYBY" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="allColumns">
+		ID,PAR_INST_ID,INST_NM,INST_CD,FK_CLASF_CD,CRT_TM,LST_UPD_TM,
+		attr1,attr2,attr3,attr4,attr5,attr6,attr7,attr8,attr9,attr10,
+		attr11,attr12,attr13,attr14,attr15,attr16,attr17,attr18,attr19,attr20,
+		attr21,attr22,attr23,attr24,attr25,attr26,attr27,attr28,attr29,attr30,
+		attr31,attr32,attr33,attr34,attr35,attr36,attr37,attr38,attr39,attr40,
+		VERSION,
+		CREATETIME,
+		CREATEBY,
+		LASTMODIFYTIME,
+		LASTMODIFYBY
+	</sql>
+
+
+    <select id="queryMetadata" resultMap="MetadataVOMap"  >
+        SELECT
+        <include refid="allColumns" />
+        FROM t_med_md_instance
+    </select>
+    <select id="queryAllMetadataId" resultType="String"  >
+        SELECT
+        id
+        FROM t_med_md_instance
+    </select>
+
+
+</mapper>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/umbrellaroot" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/umbrellaroot/aop" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/umbrellaroot/umbrella-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/umbrellaroot/umbrella-shop" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/umbrellaroot/umbrella-shop/umbrella-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/umbrellaroot/umbrella-shop/umbrella-product" charset="UTF-8" />
+  </component>
+</project>

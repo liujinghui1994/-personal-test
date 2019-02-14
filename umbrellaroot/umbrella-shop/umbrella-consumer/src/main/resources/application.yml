@@ -1,0 +1,31 @@
+server:
+  port: 8081
+spring:
+  profiles:
+    active: dev
+
+#  spring.dubbo.application.name=consumer
+#  spring.dubbo.protocol.name=dubbo
+#  spring.dubbo.consumer.check=false
+#  spring.dubbo.registry.address=zookeeper://192.168.3.104:2181
+#  spring.dubbo.scan=com.umbrella.dubboconsumer.controller
+
+
+
+  dubbo:
+    application:
+      name: consumer
+    base-package: com.umbrella.dubboproduct.controller
+    registry:
+      address: 192.168.3.104                   # zookeeper注册中心的地址
+      port: 2181                           # zookeeper注册中心的端口
+    protocol:
+      name: dubbo
+      port: -1
+      serialization: hessian2
+    provider:
+      retries: 0                           # 服务调用重试次数，服务发布者不给重试，让服务调用者自己重试
+    consumer:
+      timeout: 3000
+      check: false                         # 服务启动时检查被调用服务是否可用
+      retries: 2                           # 服务调用重试次数

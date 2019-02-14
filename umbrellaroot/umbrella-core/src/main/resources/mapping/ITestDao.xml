@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.umbrella.core.user_manage.dao.ITestDao" >
+    <resultMap id="TestVOMap" type="com.umbrella.core.user_manage.model.TestVO">
+        <result column="number" property="number" javaType="String"/>
+    </resultMap>
+    <select id="queryTestVO" resultMap="TestVOMap">
+        SELECT number FROM testvo
+    </select>
+</mapper>

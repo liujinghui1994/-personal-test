@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="common/common_resource :: common_resource"></div>
+    <script type="text/javascript" th:src="@{/script/login/login.js}"></script>
+</head>
+<body>
+    <div th:replace="common/common_header :: common_header"></div>
+    <div align="center" id="login">
+    <form  id="loginForm" name="login" action="" method="post" class="fh5co-form animate-box" data-animate-effect="fadeIn">
+        <div>
+            <table  width="100%">
+                <tr>
+                    <td align="left" width="30%">
+                        <img src="/images/timg.jpg" width="120px"/>
+                    </td>
+                    <td  width="70%">
+                        <h2>UMBRELLA CORPORATION</h2>
+                        <h2>用户登录</h2>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br/>
+        <div class="form-group"  align="left">
+            <input type="text" id="userName" class="form-control" placeholder="UserName" name="userName"/>
+        </div>
+        <div class="form-group"  align="left">
+            <input type="password" id="userPassword" class="form-control" placeholder="UserPassword" name="userPassword"/>
+        </div>
+        <br/>
+        <table  width="100%">
+            <tr>
+                <td width="50%" style="text-align:center;">
+                    <input type="button" value="登陆" class="btn btn-primary" onclick="doLogin()">
+                </td>
+                <td width="50%" style="text-align:center;">
+                    <input type="button" value="注册" class="btn btn-primary" onclick="doRegister()">
+                </td>
+            </tr>
+        </table>
+    </form>
+    </div>
+    <div th:replace="common/common_footer :: common_footer"></div>
+</body>
+</html>

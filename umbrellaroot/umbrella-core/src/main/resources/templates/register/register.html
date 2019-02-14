@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Umbrella</title>
+		<div th:replace="common/common_resource :: common_resource"></div>
+		<script type="text/javascript" th:src="@{/script/register/register.js}"></script>
+	</head>
+	<body>
+		<div th:replace="common/common_header :: common_header"></div>
+		<div id="register" style="text-align:center; margin:50px auto ;width: 700px;height: 400px;" >
+		<form  id="loginForm" name="login" method="post" class="fh5co-form animate-box" onsubmit="return false;" data-animate-effect="fadeIn">
+			<div>
+				<table  width="100%">
+					<tr>
+						<td align="left" width="30%">
+							<img src="/images/timg.jpg" width="120px"/>
+						</td>
+						<td  width="70%">
+							<h2>UMBRELLA CORPORATION</h2>
+							<h1>用户注册</h1>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br/>
+			<div class="form-group"  align="left">
+				<label for="userName" class="sr-only">姓名</label>
+				<input id="userName" type="text" class="input" placeholder="姓名" name="userName"/>
+			</div>
+			<div class="form-group"  align="left">
+				<label for="userPassword" class="sr-only">密码</label>
+				<input type="password" id="userPassword" class="input" placeholder="密码" name="userPassword"/>
+			</div>
+			<div class="form-group"  align="left">
+				<label for="userEmail" class="sr-only">邮箱</label>
+				<input type="email" id="userEmail" class="input" placeholder="邮箱" name="userEmail"/>
+			</div>
+			<div class="form-group"  align="left">
+				<label for="userMobile" class="sr-only">手机</label>
+				<input type="tel" id="userMobile" class="input" placeholder="手机" name="userMobile"/>
+			</div>
+			<br/>
+			<table  width="100%">
+				<tr>
+					<td width="50%" style="text-align:center;">
+						<input type="submit" value="注册" class="btn btn-primary" onclick="doRegister()">
+					</td>
+					<td width="50%" style="text-align:center;">
+						<input type="button" value="登录" class="btn btn-primary" onclick="doLogin()">
+					</td>
+				</tr>
+			</table>
+		</form>
+		</div>
+		<div th:replace="common/common_footer :: common_footer"></div>
+	</body>
+</html>
+

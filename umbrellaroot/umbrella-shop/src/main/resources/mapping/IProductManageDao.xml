@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.umbrella.shop.armsmerchant.product_manage.dao.IProductManageDao" >
+
+    <resultMap id="DefaultProductVOtMap" type="com.umbrella.shop.armsmerchant.product_manage.com.model.DefaultProductVO" >
+        <id column="productId" property="productId" jdbcType="BIGINT" />
+        <result column="originalPrice" property="originalPrice" jdbcType="DOUBLE" />
+        <result column="productTitle" property="productTitle" jdbcType="VARCHAR" />
+        <result column="productImg" property="productImg" jdbcType="VARCHAR" />
+        <result column="stockCount" property="stockCount" jdbcType="INTEGER" />
+    </resultMap>
+
+    <resultMap id="DefaultProductDetailVOMap" type="com.umbrella.shop.armsmerchant.product_manage.com.model.DefaultProductDetailVO" >
+        <id column="productId" property="productId" jdbcType="BIGINT" />
+        <result column="originalPrice" property="originalPrice" jdbcType="DOUBLE" />
+        <result column="productTitle" property="productTitle" jdbcType="VARCHAR" />
+        <result column="productImg" property="productImg" jdbcType="VARCHAR" />
+        <result column="productName" property="productName" jdbcType="VARCHAR" />
+        <result column="productDescription" property="productDescription" jdbcType="VARCHAR" />
+        <result column="saleNum" property="saleNum" jdbcType="VARCHAR" />
+        <result column="stockCount" property="stockCount" jdbcType="INTEGER" />
+    </resultMap>
+
+    <sql id="DefaultProduct" >
+        productId, originalPrice, productTitle, stockCount, productImg
+    </sql>
+    <sql id="DefaultProductDetail" >
+        productId, originalPrice, productTitle, productName, productDescription, stockCount, saleNum, productImg
+    </sql>
+
+    <select id="queryDefaultProducts" resultMap="DefaultProductDetailVOMap">
+        select
+        <include refid="DefaultProduct" />
+        from product
+    </select>
+
+    <select id="queryDefaultProductDetails" resultMap="DefaultProductDetailVOMap">
+        select
+        <include refid="DefaultProductDetail" />
+        from product
+    </select>
+</mapper>
